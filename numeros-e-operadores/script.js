@@ -74,4 +74,6 @@ var pesoPorDois = peso / 2 + unidade; // NaN (Not a Number)
 var numero = +'80' / 2; // transformo o 80 em number com o + na frente e divido por 2 direto
 var unidade = 'kg';
 var peso = numero + unidade  // '80kg'
+
 console.log(peso)
+
