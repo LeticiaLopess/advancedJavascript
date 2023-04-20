@@ -140,4 +140,4 @@ console.log(proximoDD)
 const animais = document.querySelector('.animais')
 
 faq.innerHTML = animais.innerHTML; 
-// faq.innerHTML = '' // some 
+// faq.innerHTML = '' // some

@@ -4,10 +4,6 @@
   font-family: 'IBM Plex Mono', monospace;
 }
 
-html.textomaior {
-  font-size: 150%;
-}
-
 img {
   display: block;
   max-width: 100%; /* acompanha o container */
@@ -218,5 +214,27 @@ No código acima, quando escrevemos 1fr 1fr 1fr estamos dizendo que queremos 3 c
   }
 }
 
-body { font-size: 140%; padding: 1em; }
-div.FixedHeader_Cloned table { margin: 0 !important }
+.animais-lista li {
+  cursor: pointer;
+}
+
+.js-tabcontent section { /* esconde de leitores de tela também ai teríamos que ver outra forma*/
+  display: none;
+}
+
+.js-tabcontent section.ativo {
+  display: block !important;
+  animation: show .5s forwards; /* o forwards deixará o texto na sua posição final [to] do keyframe show */
+}
+
+@keyframes show { /* animação com CSS */
+  from {
+    opacity: 0;
+    transform: matrix3d();
+    transform: translate3d(-30px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}
