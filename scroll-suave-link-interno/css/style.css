@@ -1,12 +1,11 @@
-* { /* aplica a todos os elementos */
+body, h1, h2, ul, li, p, dd, dt, dl {
   margin: 0px;
   padding: 0px;
-  font-family: 'IBM Plex Mono', monospace;
 }
 
 img {
   display: block;
-  max-width: 100%; /* acompanha o container */
+  max-width: 100%;
 }
 
 ul {
@@ -16,25 +15,18 @@ ul {
 body {
   background: #faf6ed;
   color: #222;
+  -webkit-font-smoothing: antialiased;
   display: grid;
-  grid-template-columns: 1fr 120px minmax(300px, 800px) 1fr; /* 1fr - uma fração, representa uma coluna | 120px outra coluna | minmax() outra coluna ... */
-  -webkit-font-smoothing: antialiased; /* webkit - específico para o chrome */ /* por padrão o browser meio que torna a tipografia suave, usamos esse trecho que remove isso*/
+  grid-template-columns: 1fr 120px minmax(300px, 800px) 1fr;
 }
 
-/*  
-O que é 1fr grid?
-grid-template-columns
-
-No código acima, quando escrevemos 1fr 1fr 1fr estamos dizendo que queremos 3 colunas que ocupem 1 fração do espaço disponível, ou seja, cada coluna vai ter 1/3 do espaço disponível lateralmente.
-*/
-  
 .menu {
-  grid-column: 3/5; /* vai da linha 3 à linha 5 */;
+  grid-column: 3 / 5;
   margin-top: 2rem;
   margin-bottom: 2rem;
-  background: #fb5;
+  background: #FB5;
 }
-  
+
 .menu ul {
   display: flex;
   flex-wrap: wrap;
@@ -46,27 +38,28 @@ No código acima, quando escrevemos 1fr 1fr 1fr estamos dizendo que queremos 3 c
   padding: 10px;
   margin-right: 10px;
   color: #222;
-  text-decoration: none; /* tira o sublinhado */
+  text-decoration: none;
+  font-family: 'IBM Plex Mono', monospace;
   font-weight: bold;
   text-transform: uppercase;
-  font-size: .875rem;
-  letter-spacing: .1em; /* espaçamento entre cada letra */
+  font-size: 0.875rem;
+  letter-spacing: .1em;
 }
 
 .grid-section {
-  grid-column: 2/4; /* vai do 2 até o 4 */
+  grid-column: 2 / 4;
   width: 100%;
   box-sizing: border-box;
   padding: 10px;
   display: grid;
-  grid-template-columns: 90px 300px 1fr; /* 100px [espaço em branco do canto], 300px [onde ficam os animais] 1fr [coluna do texto] */
+  grid-template-columns: 90px 300px 1fr;
   grid-gap: 20px;
   margin-bottom: 4rem;
 }
 
 .titulo {
   font-family: 'Playfair Display SC', georgia;
-  font-size: 6rem; /* 6*16 */
+  font-size: 6rem;
   line-height: 1;
   font-weight: 400;
   margin-bottom: 1rem;
@@ -74,12 +67,12 @@ No código acima, quando escrevemos 1fr 1fr 1fr estamos dizendo que queremos 3 c
 }
 
 .animais h2 {
-  font-family: 'IBM Plex Mono', monospace ;
+  font-family: 'IBM Plex Mono', monospace;
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: .1em;
   margin-bottom: 1rem;
-  color: #e54;
+  color: #E54;
 }
 
 .animais h2::before {
@@ -88,7 +81,7 @@ No código acima, quando escrevemos 1fr 1fr 1fr estamos dizendo que queremos 3 c
   width: 40px;
   height: 10px;
   margin-right: 10px;
-  background: #fb5;
+  background: #FB5;
 }
 
 .animais p {
@@ -103,16 +96,21 @@ No código acima, quando escrevemos 1fr 1fr 1fr estamos dizendo que queremos 3 c
   grid-column: 2;
 }
 
-.animais-lista::-webkit-scrollbar { /* -webkit-scrollbar deve estar junto dos dois pontos */
+.animais-lista li {
+  cursor: pointer;
+}
+
+.animais-lista::-webkit-scrollbar {
   width: 18px;
 }
 
-.animais-lista::-webkit-scrollbar-thumb { /* thumb é o scroll */
-  background: #fb5;
+.animais-lista::-webkit-scrollbar-thumb {
+  background: #FB5;
   border-left: 4px solid #faf6ed;
+  border-right: 4px solid #faf6ed;
 }
 
-.animais-lista::-webkit-scrollbar-track { /* parte de trás/fundo do scroll */
+.animais-lista::-webkit-scrollbar-track {
   background: #faf6ed;
 }
 
@@ -125,7 +123,7 @@ No código acima, quando escrevemos 1fr 1fr 1fr estamos dizendo que queremos 3 c
 }
 
 .faq-lista {
-  grid-column: 2/4;
+  grid-column: 2 / 4
 }
 
 .faq-lista dt {
@@ -133,7 +131,7 @@ No código acima, quando escrevemos 1fr 1fr 1fr estamos dizendo que queremos 3 c
   font-weight: bold;
   margin-top: 2rem;
   margin-bottom: .5rem;
-  color: #e54;
+  color: #E54;
 }
 
 .faq-lista dt::before {
@@ -142,7 +140,7 @@ No código acima, quando escrevemos 1fr 1fr 1fr estamos dizendo que queremos 3 c
   width: 20px;
   height: 10px;
   margin-right: 10px;
-  background: #fb5;
+  background: #FB5;
 }
 
 .faq-lista dd {
@@ -152,7 +150,7 @@ No código acima, quando escrevemos 1fr 1fr 1fr estamos dizendo que queremos 3 c
 }
 
 .mapa {
-  grid-column: 2; /* vai pra 2 coluna */
+  grid-column: 2;
 }
 
 .dados {
@@ -170,13 +168,13 @@ No código acima, quando escrevemos 1fr 1fr 1fr estamos dizendo que queremos 3 c
   width: 20px;
   height: 10px;
   margin-right: 10px;
-  background: #fb5;
+  background: #FB5;
 }
 
 .copy {
   grid-column: 3/5;
   margin-bottom: 2rem;
-  background: #fb5;
+  background: #FB5;
 }
 
 .copy p {
@@ -189,12 +187,11 @@ No código acima, quando escrevemos 1fr 1fr 1fr estamos dizendo que queremos 3 c
   body {
     grid-template-columns: 1fr;
   }
-
   .menu, .grid-section, .copy {
     grid-column: 1;
   }
   .grid-section {
-    grid-template-columns: 100px 1fr; 
+    grid-template-columns: 100px 1fr;
     grid-gap: 10px;
   }
   .animais-lista {
@@ -209,60 +206,56 @@ No código acima, quando escrevemos 1fr 1fr 1fr estamos dizendo que queremos 3 c
   .menu {
     margin-top: 0px;
   }
-  .menu {
+  .copy {
     margin-bottom: 0px;
   }
 }
 
-.animais-lista li {
-  cursor: pointer;
-}
-
-.js-tabcontent section { /* esconde de leitores de tela também ai teríamos que ver outra forma*/
+.js .js-tabcontent section {
   display: none;
 }
 
 .js-tabcontent section.ativo {
   display: block !important;
-  animation: show .5s forwards; /* o forwards deixará o texto na sua posição final [to] do keyframe show */
+  animation: show .5s forwards;
 }
 
-@keyframes show { /* animação com CSS */
+@keyframes show {
   from {
     opacity: 0;
-    transform: matrix3d();
     transform: translate3d(-30px, 0, 0);
   }
   to {
     opacity: 1;
-    transform: translate3d(0,0,0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
-.js-accordion dd {
+.js .js-accordion dd {
   display: none;
 }
 
-.js-accordion dt::after { /*depois do texto desse elemento*/
-  content: '↴';
+.js-accordion dt::after {
+  content: '⬎';
   margin-left: 10px;
 }
 
-.js-accordion dt.ativo::after { /*depois do texto desse elemento*/
-  content: '⤴';
+.js-accordion dt.ativo::after {
+  content: '⬏';
 }
 
 .js-accordion dd.ativo {
   display: block;
+  animation: slideDown .5s forwards;
 }
 
 @keyframes slideDown {
   from {
     opacity: 0;
-    max-height: 0; /* com o height dá um bug, só fica direitinho com o max-height */
+    max-height: 0;
   }
   to {
+    max-height: 200px;
     opacity: 1;
-    max-height: 400px; /* auto não funciona, coloque um valor bem maior do que você tem de texto */
   }
 }
