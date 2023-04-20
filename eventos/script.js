@@ -112,23 +112,22 @@
 
 // Selecione todos os elementos do site começando a partir do body,
 // ao clique mostre exatamente quais elementos estão sendo clicados
-// function handleElemento(event) {
-//    event.currentTarget.remove();
-// }
+ function handleElemento(event) {
+    event.currentTarget.remove();
+ }
 
 // const todosElementos = document.querySelectorAll('body *'); // => todos os itens dentro de body
 // console.log(todosElementos)
 
-// todosElementos.forEach((elemento) => {
-//   elemento.addEventListener('click', handleElemento);
-// })
+todosElementos.forEach((elemento) => {
+  elemento.addEventListener('click', handleElemento);
+})
 
 // Utilizando o código anterior, ao invés de mostrar no console,
 // remova o elemento que está sendo clicado, o método remove() remove um elemento
 
 
 // Se o usuário clicar na tecla (t), aumente todo o texto do site. 
-
 function handleClickT(event) {
   console.log(event.key)
   if(event.key === 't') {
@@ -137,3 +136,6 @@ function handleClickT(event) {
 }
 
 window.addEventListener('keydown', handleClickT);
+
+
+
