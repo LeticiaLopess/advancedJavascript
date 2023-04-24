@@ -72,3 +72,6 @@ function initScrollSuave() {
   // o .scrollIntoView() está relacionado ao elemento em si
 }
 initScrollSuave();
+
+
+

@@ -77,13 +77,13 @@ console.log(firstImage.offsetTop)
 
 // Retorne a soma da largura de todas as imagens
 
-// window.onload = function () {
-//   const allImages = document.querySelectorAll('img')
+window.onload = function () {
+  const allImages = document.querySelectorAll('img')
 
-// allImages.forEach(function(item, index, array) { // se eu não setar um valor de largura nas imagens, o JS carrega primeiro e primeiro vem o valor 0, então envolveremos a função com window.onload()
-//   console.log(item.offsetWidth)
-// })
-// }
+  allImages.forEach(function(item, index, array) { // se eu não setar um valor de largura nas imagens, o JS carrega primeiro e primeiro vem o valor 0, então envolveremos a função com window.onload()
+  console.log(item.offsetWidth)
+  })
+}
 
 // or
 

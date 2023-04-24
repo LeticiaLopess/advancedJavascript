@@ -117,6 +117,7 @@
 
 // faq.appendChild(cloneH1);
 
+// EXERCÍCIOS
 
 // Duplique o menu e adicione ele em copy
 

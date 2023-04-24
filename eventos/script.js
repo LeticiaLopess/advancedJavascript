@@ -109,6 +109,7 @@
 //   link.addEventListener('click', handleLink);
 // })
 
+// EXERCÍCIOS
 
 // Selecione todos os elementos do site começando a partir do body,
 // ao clique mostre exatamente quais elementos estão sendo clicados

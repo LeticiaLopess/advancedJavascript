@@ -80,6 +80,7 @@ arrayGrid.forEach(function(item) {
 // retorna NodeList: querySelectorAll
 
 
+// EXERCÍCIOS
 
 // Retorne no console todas as imagens do site
 const imagens = document.querySelectorAll('img');
