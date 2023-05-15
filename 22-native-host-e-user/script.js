@@ -6,6 +6,7 @@ if(typeof Array.fromakfkjdsj !== "undefined") {
   console.log('Não existe')
 }
 
+// EXERCÍCIOS
 
 // Liste 5 objetos nativos
 Object
