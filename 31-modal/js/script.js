@@ -3,12 +3,14 @@ import initAnimacaoScroll from './modules/scroll-animacao.js'
 import initAccordion from './modules/accordion.js';
 import initTabNav from './modules/tab-nav.js' // poderia ser import init e chamaríamos init() ali em baixo
 import initModal from './modules/modal.js'
+import initTooltip from './modules/tooltip.js';
 
 initScrollSuave();
 initAnimacaoScroll();
 initAccordion();
 initTabNav();
 initModal();
+initTooltip();
 
 // named exports -> quando você for exportar mais de uma função de um arquivo, não usaremos o default e o import será por chaves, no import acima poderiamos escolher qualquer nome pro import (usamos o nome da função mas poderia ser outro), nesse caso de mais de um arquivo deve ser exatamente o nome das funções
 
