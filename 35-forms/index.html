@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <style>
+    label {
+      display: block;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      margin-bottom: .5rem;
+      margin-top: 1rem;
+    }
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    input, textarea {
+      width: 100%;
+      box-sizing: border-box; /* pra acumular o padding */
+      padding: .5rem;
+      border: 2px solid #000;
+      font-size: 1rem;
+      margin-bottom: .5rem;
+    }
+    textarea {
+      height: 150px;
+    }
+    .invalido {
+      border-color: red;
+    }
+  </style>
+
+  <form name="contato" id="contato">
+    <label for="nome">Nome</label>
+    <input type="text" name="nome" id="nome" required>
+    <span class="erro"></span>
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" required> <!-- com o required, quando você bota o mouse em cima do input aparece uma mensagem: "Preencha este campo." -->
+    <span class="erro"></span>
+    <label for="mensagem">Mensagem</label>
+    <textarea name="mensagem" id="mensagem"></textarea>
+    <!-- <select name="cores" id="cores">
+      <option value="blue">Azul</option> 
+      <option value="red">Vermelho</option>
+    </select>
+    <input type="checkbox" value="identidade" id="identidade">
+    <label for="identidade">Possui Identidade?</label>
+    <input type="checkbox" value="casado" id="casado">
+    <label for="casado">É casado?</label> -->
+
+
+  </form>
+
+  <!-- lembrando que o JS puxa o value do input e não o nome dentro do option, o nome é o que aparece pra pessoa. -->
+
+  <span class="texto"></span>
+
+  <script>
+
+    const dados = {}
+
+    function handleKeyUp(event) {
+      // console.log(event.target.name) // pega o valor name do campo input, ou seja, quando eu faço dados[event.target.name], eu estou criando uma variavel dentro de dados com o nome do input, e ai você atribui o valor
+      dados[event.target.name] = event.target.value; // criei meu objeto com todas as respostas do form, e se eu mudar o valor, ele sobrescreve
+      console.log(dados)
+    }
+
+    contato.addEventListener('change', handleKeyUp)
+
+  </script>
+
+</body>
+</html>
