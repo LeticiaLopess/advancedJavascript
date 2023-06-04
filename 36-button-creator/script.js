@@ -40,8 +40,24 @@ function handleChange(event) {
   const value = event.target.value;
 
   handleStyle[name](value) // () para ativar // é igual a eu fazer handleStyle.height() pra acessar uma propriedade ou método
+  saveValues(name, value);
   showCss();
 }
+
+function saveValues(name, value) { // salvando valores
+  localStorage[name] = value; // = localStorage.nome = 'Andre'; // key + value, se eu clicar naquele proibido no inspecionar eu limpo o cache
+}
+
+function setValues() { // setando valores
+  const properties = Object.keys(localStorage); // retorna array com todas as chaves
+  properties.forEach(property => {
+    handleStyle[property](localStorage[property]);
+    controles.elements[property].value = localStorage[property];
+  })
+  showCss();
+}
+
+setValues();
 
 function showCss() {
   cssText.innerHTML = '<span>' + btn.style.cssText.split('; ').join(';</span><span>'); // split: corta o array onde tem o '; '  |  join: junta os elementos do array like e retorna uma string
