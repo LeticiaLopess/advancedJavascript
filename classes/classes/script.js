@@ -45,19 +45,12 @@ class Button {
   static blueButton(text) {
     return new Button(text, 'blue', 'white')
   }
-  
+
 }
 
 const botaoAzul = Button.blueButton('Clique')
 
 botaoAzul.appendTo('body')
-
-
-
-
-
-
-
 
 
 // const blueButton = new Button('Comprar', 'blue', 'white');
