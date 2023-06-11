@@ -1,6 +1,31 @@
 export default class Countdown {
-  constructor(futureDate) {
+  constructor(futureDate, background, color) {
     this.futureDate = futureDate;
+    this.background = background;
+    this.color = color;
+    this.countdownElement = null;
+  }
+  element() {
+    this.countdownElement = document.createElement('span');
+    this.countdownElement.style.background = this.background;
+    this.countdownElement.style.color = this.color;
+    document.querySelector('body').appendChild(this.countdownElement);
+    this.updateCountdown();
+    return this.countdownElement;
+  }
+  updateCountdown() {
+    const {days, hours, minutes, seconds} = this.total
+    const countdownText = `${days} dias ${hours} horas ${minutes} minutos e ${seconds} segundos`
+    this.countdownElement.textContent = countdownText;
+  }
+  startCountdown() {
+    this.updateCountdown();
+    this.intervalId = setInterval(() => {
+      this.updateCountdown();
+      if (this._timeStampDiff <= 0) {
+        this.stopCountdown();
+      }
+    }, 1000);
   }
   get _actualDate() {
     return new Date();

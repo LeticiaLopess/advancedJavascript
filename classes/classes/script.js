@@ -28,7 +28,7 @@ class Button {
     this.text = text;
     this.background = background;
     this.color = color;
-    return this;
+    // return this;
   }
   element() {
     const buttonElement = document.createElement('button');
