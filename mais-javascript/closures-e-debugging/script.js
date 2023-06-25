@@ -11,15 +11,3 @@
 // }
 
 // funcao1();
-
-
-function contagem() {
-  let total = 0;
-  return function incremento() {
-    total++;
-    console.log(total);
-  }
-}
-
-const ativarIncremento = contagem(); // contagem() é uma função não ativada
-ativarIncremento() // aqui estou ativando ela
