@@ -23,6 +23,21 @@
     input::placeholder {
       color: rgba(0,0,0,.2);
     }
+    .erro-text {
+      display: none;
+      font-family: 'IBM Plex Mono';
+      font-size: .875rem;
+      color: red;
+    }
+    .erro-text.ativar {
+      display: block;
+    }
+    input.erro {
+      border-color: red;
+    }
+    input.valido {
+      border-color: green;
+    }
   </style>
   <form>
     <label for="cpf">CPF</label>
