@@ -144,15 +144,58 @@ for(tag of tags) {
 
 
 
+const regexp2 = /\w+/gi
+
+const newRegexp2 = new RegExp('\\w', 'gi');
+
+const frase = 'JavaScript Linguagem 101'; 
+console.log(frase.replace(regex2, 'X'));
+
+
+const regexp3 = /\w+/gi;
+
+regexp3.flags; // 'gi'
+regexp3.global; // true
+regexp3.ignoreCase; // true
+regexp3.multiline; // false
+regexp3.source; // '\w+'
 
 
 
 
+const regexp4 = /Java/g;
+const frase2 = 'JavaScript e Java';
+
+// primeiro retorna true (Java de JavaScript), a próxima vez que ativo ele, ele continua de onde parou e retorna true Java, dps retorna false
+
+regexp4.lastIndex; // 0
+regexp4.test(frase2); // true
+regexp4.lastIndex; // 4 -> último índice onde achou o que queria achar
+regexp4.test(frase2); // true
+regexp4.lastIndex; // 17
+regexp4.test(frase2); // false
+regexp4.lastIndex; // 0
+regexp4.test(frase2); // true (Reinicia
+regexp4.lastIndex;  // 4
+
+let i = 1
+while(regexp4.test(frase2)) {
+  console.log(i++, regexp4.lastIndex)
+}
 
 
 
 
+const frase3 = 'JavaScript, TypeScript, CoffeeScript, Java'; 
+const regexp5 = /\w+/g
 
+let regexpResult;
+while(regexpResult = regexp5.exec(frase3) !== null) {
+  console.log(regexp5.exec(frase3))
+}
+
+
+// se eu executar diretamente o console.log e não tivesse a variável pra armazenar o resultado e não tivesse o Java por exemplo, eu teria número ímpar e o loop travaria o browser
 
 
 
