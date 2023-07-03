@@ -39,7 +39,7 @@ export default class ValidarCpf {
   adicionarErroSpan() {
     const erroElement = document.createElement('span');
     erroElement.classList.add('erro-text');
-    erroElement.innerText = 'CPF Inválido'
+    erroElement.innerText = 'CPF Inválido';
     this.element.parentElement.insertBefore(erroElement, this.element.nextElementSibling); // 1 parâmetro) o elemento em si, 2 parâmetro) elemento que ficará logo depois do elemento em si
   }
   iniciar() { // inicia a classe
