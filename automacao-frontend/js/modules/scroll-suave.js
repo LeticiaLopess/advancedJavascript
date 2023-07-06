@@ -67,8 +67,8 @@ export default class ScrollSuave {
   init() {
     if (this.linksInternos.length) {
       this.addLinkEvent()
-      return this; // se eu não retornar this, retornará undefined quando eu der o init  
     }
+    return this; // se eu não retornar this, retornará undefined quando eu der o init  
   }
 
 }
