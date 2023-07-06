@@ -48,12 +48,12 @@
 // }
 
 export default class Tooltip {
-
   constructor(tooltips) {
     this.tooltips = document.querySelectorAll(tooltips);
 
     this.onMouseLeave = this.onMouseLeave.bind(this)
     this.onMouseMove = this.onMouseMove.bind(this)
+    this.onMouseOver = this.onMouseOver.bind(this)
   }
   
   /* para eu chamar a tooltipBox aqui em baixo e funcionar, no caso, no addEventListener eu posso passar a função de callback como um objeto, mas, esse objeto vai ter que ter um método handleEvent, se ele tiver esse método ele vai ativar a ação */ 
@@ -62,13 +62,12 @@ export default class Tooltip {
   onMouseMove(event) { /* mostrando a tooltip de acordo com a posição do mouse */
   this.tooltipBox.style.top = `${event.pageY + 20}px`; // quando a tooltip aparece, ok, apareceu mas se você mover o mouse tem momentos que a tooltip vai ficar piscando, isso porque aparece uma caixa embaixo dela, assim, tivemos que somar esses 20 pra que essa caixa não apareça embaixo
   
-  if (event.pageX +240 > window.innerWidth) {
-    this.tooltipBox.style.top = `${event.pageY + 190}px`;
-  } else {
-    this.tooltipBox.style.top = `${event.pageY + 20}px`;
-  }
+    if (event.pageX + 240 > window.innerWidth) {
+      this.tooltipBox.style.left = `${event.pageX - 195}px`;
+    } else {
+      this.tooltipBox.style.left = `${event.pageX + 20}px`;
+    }
 
-  this.tooltipBox.style.left = `${event.pageX + 20}px`;
   }
 
 // remove a tooltip e os eventos de mousemove e mouseleave
@@ -85,7 +84,6 @@ export default class Tooltip {
     tooltipBox.classList.add('tooltip');
     tooltipBox.innerText = text;
     document.body.appendChild(tooltipBox);
-    console.log(tooltipBox);
     this.tooltipBox = tooltipBox;
   }
 
@@ -106,7 +104,7 @@ export default class Tooltip {
 
   init() {
     if (this.tooltips.length) {
-      this.addTooltipsEvent()
+      this.addTooltipsEvent();
     }
     return this;
   }
