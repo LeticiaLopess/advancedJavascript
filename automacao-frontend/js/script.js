@@ -5,10 +5,10 @@ import TabNav from './modules/tab-nav.js' // poderia ser import init e chamaría
 import Modal from './modules/modal.js'
 import Tooltip from './modules/tooltip.js';
 import DropdownMenu from './modules/dropdown-menu.js';
-import initMenuMobile from './modules/menu-mobile.js';
-import initFuncionamento from './modules/funcionamento.js';
+import Funcionamento from './modules/funcionamento.js';
 import fetchAnimais from './modules/fetch-animais.js';
 import fetchBitcoin from './modules/fetch-bitcoin.js';
+import MenuMobile from './modules/menu-mobile.js';
 
 const scrollSuave = new ScrollSuave('[data-menu="suave"] a[href^="#"]')
 scrollSuave.init();
@@ -31,11 +31,15 @@ scrollAnima.init();
 const dropdownMenu = new DropdownMenu('[data-dropdown]')
 dropdownMenu.init()
 
-fetchAnimais("../../animaisapi.json", ".numeros-grid");
+const menuMobile = new MenuMobile('[data-menu="button"]', '[data-menu="list"]')
+menuMobile.init()
+
+const funcionamento = new Funcionamento('[data-menu="button"]', 'ativo')
+funcionamento.init()
+
+fetchAnimais("./animaisapi.json", ".numeros-grid");
 fetchBitcoin('https://blockchain.info/ticker', '.btc-preco')
 
-initMenuMobile();
-initFuncionamento();
 
 
 // named exports -> quando você for exportar mais de uma função de um arquivo, não usaremos o default e o import será por chaves, no import acima poderiamos escolher qualquer nome pro import (usamos o nome da função mas poderia ser outro), nesse caso de mais de um arquivo deve ser exatamente o nome das funções
