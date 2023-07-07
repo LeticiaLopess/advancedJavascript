@@ -1,5 +1,5 @@
 import ScrollSuave from './modules/scroll-suave.js'
-import initAnimacaoScroll from './modules/scroll-animacao.js'
+import ScrollAnima from './modules/scroll-anima.js'
 import Accordion from './modules/accordion.js';
 import TabNav from './modules/tab-nav.js' // poderia ser import init e chamaríamos init() ali em baixo
 import Modal from './modules/modal.js'
@@ -25,14 +25,16 @@ modal.init();
 const tooltip = new Tooltip('[data-tooltip]');
 tooltip.init();
 
+const scrollAnima = new ScrollAnima('[data-anime="scroll"]');
+scrollAnima.init();
+
 fetchAnimais("../../animaisapi.json", ".numeros-grid");
 fetchBitcoin('https://blockchain.info/ticker', '.btc-preco')
 
-initAnimacaoScroll();
+
 initDropdownMenu();
 initMenuMobile();
 initFuncionamento();
-initFetchBitcoin();
 
 
 // named exports -> quando você for exportar mais de uma função de um arquivo, não usaremos o default e o import será por chaves, no import acima poderiamos escolher qualquer nome pro import (usamos o nome da função mas poderia ser outro), nesse caso de mais de um arquivo deve ser exatamente o nome das funções
