@@ -9,6 +9,7 @@ import Funcionamento from './modules/funcionamento.js';
 import fetchAnimais from './modules/fetch-animais.js';
 import fetchBitcoin from './modules/fetch-bitcoin.js';
 import MenuMobile from './modules/menu-mobile.js';
+import SlideNav from "./modules/slide.js";
 
 const scrollSuave = new ScrollSuave('[data-menu="suave"] a[href^="#"]')
 scrollSuave.init();
@@ -40,7 +41,9 @@ funcionamento.init()
 fetchAnimais("./animaisapi.json", ".numeros-grid");
 fetchBitcoin('https://blockchain.info/ticker', '.btc-preco')
 
-
+const slide = new SlideNav('.slide', '.slide-wrapper'); // ja que eu "estendo" a classe Slide em SlideNav, eu só chamo a SlideNav
+slide.init();
+slide.addControl('.custom-controls');
 
 // named exports -> quando você for exportar mais de uma função de um arquivo, não usaremos o default e o import será por chaves, no import acima poderiamos escolher qualquer nome pro import (usamos o nome da função mas poderia ser outro), nesse caso de mais de um arquivo deve ser exatamente o nome das funções
 
