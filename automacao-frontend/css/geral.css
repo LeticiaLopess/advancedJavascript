@@ -340,3 +340,10 @@ body {
   width: 8px;
   height: 10px;
 }
+
+.arrow-black {
+  background: url('../img/arrow-black.svg') no-repeat center center;
+  display: inline-block;
+  width: 8px;
+  height: 10px;
+}

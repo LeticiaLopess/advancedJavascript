@@ -13,7 +13,7 @@ export default function outsideClick(element, events, callback) {
     }  
   }
 
-  if(element.hasAttribute(outside)) {
+  if(!element.hasAttribute(outside)) {
     events.forEach((userEvent) => {
       setTimeout(() => { // o problema no menu-mobile era que aqui, o bubble ativa instantaneamente o addEventListener e a solução é usar o setTimeout, que é assíncrono, então a fase de bubble ocorre primeiro e não vai ter o addEventListener 
         html.addEventListener(userEvent, handleOutsideClick);
@@ -22,5 +22,4 @@ export default function outsideClick(element, events, callback) {
     // html.addEventListener('click', handleOutsideClick);
     element.setAttribute(outside, '');
   }
-
 }
