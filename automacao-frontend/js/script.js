@@ -35,11 +35,11 @@ dropdownMenu.init()
 const menuMobile = new MenuMobile('[data-menu="button"]', '[data-menu="list"]')
 menuMobile.init()
 
-const funcionamento = new Funcionamento('[data-menu="button"]', 'ativo')
-funcionamento.init()
+const funcionamento = new Funcionamento("[data-semana]", "aberto");
+funcionamento.init();
 
-fetchAnimais("./animaisapi.json", ".numeros-grid");
-fetchBitcoin('https://blockchain.info/ticker', '.btc-preco')
+fetchAnimais("./animais-api.json", ".numeros-grid");
+fetchBitcoin("https://blockchain.info/ticker", ".btc-preco");
 
 const slide = new SlideNav('.slide', '.slide-wrapper'); // ja que eu "estendo" a classe Slide em SlideNav, eu só chamo a SlideNav
 slide.init();

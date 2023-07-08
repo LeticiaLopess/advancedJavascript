@@ -6,9 +6,7 @@ export default class Funcionamento {
 
   dadosFuncionamento() {
     this.diasSemana = this.funcionamento.dataset.semana.split(",").map(Number);
-    this.horarioSemana = this.funcionamento.dataset.horario
-      .split(",")
-      .map(Number);
+    this.horarioSemana = this.funcionamento.dataset.horario.split(",").map(Number);
   }
 
   dadosAgora() {
